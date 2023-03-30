@@ -1,0 +1,17 @@
+apiVersion: plugin.halo.run/v1alpha1
+kind: Plugin
+metadata:
+  name: PluginRevealjs
+spec:
+  enabled: true
+  version: 1.0.0-rc.1
+  requires: "*"
+  author:
+    name: wan92hen
+    website: https://github.com/wan92hen
+  logo: logo.svg
+  homepage: https://github.com/wan92hen/plugin-revealjs
+  displayName: "reveal.js 幻灯片编辑器"
+  description: "使用 Markdown 语法编写幻灯片形式的文章。"
+  license:
+    - name: "MIT"
