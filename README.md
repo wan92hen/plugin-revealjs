@@ -2,7 +2,7 @@
 
 使用 [Ace](https://github.com/ajaxorg/ace) 编辑器和 [revealjs](https://github.com/hakimel/reveal.js) HTML Presentation Framework 构建的 Halo 文章编辑器，可以使用 Markdown 语法编辑出类似幻灯片形式的文章。
 
-![截图](./screenshot.png)
+![截图](./demo.gif)
 
 ## 使用方式
 
