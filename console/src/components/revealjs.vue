@@ -10,6 +10,7 @@ import "ace-builds/src-min-noconflict/ext-language_tools";
 
 import Reveal from "reveal.js";
 import Markdown from "reveal.js/plugin/markdown/markdown.esm.js";
+import Highlight from "reveal.js/plugin/highlight/highlight.esm.js";
 
 import { onMounted, ref, onUnmounted, watch } from "vue";
 import { useLocalStorage } from "@vueuse/core";
@@ -63,7 +64,7 @@ const initReveal = (deck: Reveal.Api) => {
 
 onMounted(() => {
   const deck = new Reveal(document.querySelector(".reveal") as Element, {
-    plugins: [Markdown],
+    plugins: [Markdown, Highlight],
     slideNumber: true,
     embedded: true,
   });
@@ -96,8 +97,10 @@ onMounted(() => {
       const htmlContent = `
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/dist/reveal.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/dist/theme/white.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github-dark.css">
       \x3Cscript src="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/dist/reveal.js">\x3C/script>
       \x3Cscript src="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/plugin/markdown/markdown.js">\x3C/script>
+      \x3Cscript src="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/plugin/highlight/highlight.js">\x3C/script>
       <div class="reveal-wrapper"  style="width: 100%; height: 32rem">
         <div class="reveal">
           <div class="slides" id="slides" ref="$slides">
@@ -109,8 +112,9 @@ onMounted(() => {
       </div>
       \x3Cscript type="Module">
         import Markdown from 'https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/plugin/markdown/markdown.esm.js';
+        import Highlight from 'https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/plugin/highlight/highlight.esm.js';
         Reveal.initialize({
-          plugins: [Markdown],
+          plugins: [Markdown, Highlight],
           slideNumber: true,
           embedded: true,
         })
